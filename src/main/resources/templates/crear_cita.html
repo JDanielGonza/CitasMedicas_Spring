@@ -29,8 +29,8 @@
 				<div class="card-body">
 					<form th:action="@{/citas}" th:object="${cita}" method="POST">
 						<div class="form-group">
-							<label>Doctor: </label> <input type="text" name="doctor"
-								th:field="*{doctor}" class="form-control" placeholder="Doctor"
+							<label>ID del Doctor: </label> <input type="text" name="doctor"
+								th:field="*{doctor.id}" class="form-control" placeholder="Doctor"
 								required>
 						</div>
 						<br>
@@ -47,8 +47,8 @@
 						</div>
 						<br>
 						<div class="form-group">
-							<label>Consultorio: </label> <input type="consultorio"
-								name="consultorio" th:field="*{consultorio}"
+							<label>Consultorio: </label> <input type="text"
+								name="consultorio" th:field="*{consultorio.numConsultorio}"
 								class="form-control" placeholder="Consultorio" required>
 						</div>
 						<br>

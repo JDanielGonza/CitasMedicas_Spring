@@ -27,11 +27,11 @@
 				class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
 				<h1 class="text-center">Edición de citas</h1>
 				<div class="card-body">
-					<form th:action="@{/citas/{id}(id=${cita.id})}"
-						th:object="${cita}" method="POST">
+					<form th:action="@{/citas/{id}(id=${citas.id})}"
+						th:object="${citas}" method="POST">
 						<div class="form-group">
-							<label>Doctor: </label> <input type="text" name="doctor"
-								th:field="*{doctor}" class="form-control" placeholder="Doctor"
+							<label>ID Doctor: </label> <input type="text" name="doctor"
+								th:field="*{doctor.id}" class="form-control" placeholder="Doctor"
 								required>
 						</div>
 						<br>
@@ -44,12 +44,12 @@
 						<div class="form-group">
 							<label for="fechaHora">Selecciona una fecha y hora:</label> <input
 								type="datetime-local" id="fechaHora" name="fechaHora"
-								th:field="*{horario}" class="form-control" required>
+								th:field="*{horario}" th:value="*{horario}" class="form-control" required>
 						</div>
 						<br>
 						<div class="form-group">
-							<label>Consultorio: </label> <input type="consultorio"
-								name="consultorio" th:field="*{consultorio}"
+							<label>Consultorio: </label> <input type="text"
+								name="consultorio" th:field="*{consultorio.numConsultorio}"
 								class="form-control" placeholder="Consultorio" required>
 						</div>
 						<br>

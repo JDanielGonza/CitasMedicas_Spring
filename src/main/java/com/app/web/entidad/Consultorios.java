@@ -52,7 +52,13 @@ public class Consultorios {
 	public void setPiso(String piso) {
 		this.piso = piso;
 	}
-	
-	
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}	
 	
 }

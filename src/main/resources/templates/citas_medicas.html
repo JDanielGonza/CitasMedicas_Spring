@@ -40,15 +40,20 @@
 					<th>Paciente</th>
 					<th>Horario</th>
 					<th>Consultorio</th>
+					<th>Acciones</th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr th:each="cita : ${citas}">
-					<td th:text="${cita.doctor}">Doctor</td>
+					<td
+						th:text="${cita.doctor.nombre} + ' ' + ${cita.doctor.apellido_paterno} + ' ' + ${cita.doctor.apellido_materno}">Doctor</td>
 					<td th:text="${cita.paciente}">Paciente</td>
 					<td th:text="${cita.horario}">Horario</td>
-					<td th:text="${cita.consultorio}">Consultorio</td>					
-				</tr>
+					<td th:text="${cita.consultorio.numConsultorio}">Consultorio</td>
+					<td>
+						<a th:href="@{/citas/editar/{id}(id=${cita.id})}" class="btn btn-info">Editar</a> 
+					</td>
+				</tr>				
 			</tbody>
 		</table>
 	</div>
