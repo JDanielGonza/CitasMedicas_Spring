@@ -29,8 +29,8 @@
 				<div class="card-body">
 					<form th:action="@{/citas}" th:object="${cita}" method="POST">
 						<div class="form-group">
-							<label>ID del Doctor: </label> <input type="text" name="doctor"
-								th:field="*{doctor.id}" class="form-control" placeholder="Doctor"
+							<label>Nombre del Doctor: </label> <input type="text" name="doctor"
+								th:field="*{doctor.nombre}" class="form-control" placeholder="Doctor"
 								required>
 						</div>
 						<br>
@@ -59,9 +59,16 @@
 				</div>
 			</div>
 		</div>
+		<div th:if="${error != null}" th:text="${error}" id="error-message" style="display: none;"></div>
+   		<script>
+        	document.addEventListener("DOMContentLoaded", function() {
+            	var errorMessage = document.getElementById('error-message');
+            	if (errorMessage && errorMessage.innerText) {
+                	alert(errorMessage.innerText);
+            	}
+        	});
+    	</script>
 	</div>
-
-
 </body>
 
 </html>

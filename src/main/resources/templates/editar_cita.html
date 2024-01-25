@@ -31,8 +31,8 @@
 						th:object="${citas}" method="POST">
 						<div class="form-group">
 							<label>ID Doctor: </label> <input type="text" name="doctor"
-								th:field="*{doctor.id}" class="form-control" placeholder="Doctor"
-								required>
+								th:field="*{doctor.nombre}" class="form-control"
+								placeholder="Doctor" required>
 						</div>
 						<br>
 						<div class="form-group">
@@ -42,9 +42,8 @@
 						</div>
 						<br>
 						<div class="form-group">
-							<label for="fechaHora">Selecciona una fecha y hora:</label> <input
-								type="datetime-local" id="fechaHora" name="fechaHora"
-								th:field="*{horario}" th:value="*{horario}" class="form-control" required>
+							<label for="fechaHora">Selecciona una fecha y hora:</label>
+							<input type="datetime-local" id="fechaHora" name="fechaHora" th:field="*{horarioStr}" class="form-control" required>							
 						</div>
 						<br>
 						<div class="form-group">

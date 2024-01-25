@@ -15,5 +15,4 @@ public class DoctoresServiceImpl implements DoctoresService {
 	public Doctores findDoctoreById(Long id) {
 		return doctoresRepository.findById(id).orElse(null);
 	}
-
 }

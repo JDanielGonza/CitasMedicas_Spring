@@ -28,8 +28,7 @@
 		</div>
 		<div class="row">
 			<div clas="col-lg-3">
-				<a th:href="@{/citas/nuevo}" class="btn btn-primary btn-sm mb3">Agregar
-					cita</a>
+				<a th:href="@{/citas/nuevo}" class="btn btn-primary btn-sm mb3">Agregar	cita</a>
 			</div>
 		</div>
 		<br>
@@ -46,12 +45,13 @@
 			<tbody>
 				<tr th:each="cita : ${citas}">
 					<td
-						th:text="${cita.doctor.nombre} + ' ' + ${cita.doctor.apellido_paterno} + ' ' + ${cita.doctor.apellido_materno}">Doctor</td>
+						th:text="${cita.doctor.nombre} + ' ' + ${cita.doctor.apellidoPaterno} + ' ' + ${cita.doctor.apellidoMaterno}">Doctor</td>
 					<td th:text="${cita.paciente}">Paciente</td>
 					<td th:text="${cita.horario}">Horario</td>
 					<td th:text="${cita.consultorio.numConsultorio}">Consultorio</td>
 					<td>
 						<a th:href="@{/citas/editar/{id}(id=${cita.id})}" class="btn btn-info">Editar</a> 
+						<a th:href="@{/citas/{id}(id=${cita.id})}" class="btn btn-danger">Eliminar</a>
 					</td>
 				</tr>				
 			</tbody>

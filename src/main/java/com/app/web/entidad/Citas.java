@@ -1,5 +1,9 @@
 package com.app.web.entidad;
 
+import java.time.LocalDateTime;
+
+import com.app.web.dto.CitasDto;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -27,16 +31,25 @@ public class Citas {
 	private Doctores doctor;
 
 	@Column(name = "horario", nullable = false, length = 50)
-	private String horario;
+	private LocalDateTime horario;
 
 	@Column(name = "paciente", nullable = false, length = 50)
 	private String paciente;
 
+	public Citas(CitasDto citasDto) {
+		super();
+		this.id = citasDto.getId();
+		this.consultorio = citasDto.getConsultorio();
+		this.doctor = citasDto.getDoctor();
+		this.horario = citasDto.getHorario();
+		this.paciente = citasDto.getPaciente();
+	}
+	
 	public Citas() {
 		super();
 	}
 
-	public Citas(Consultorios consultorio, Doctores doctor, String horario, String paciente) {
+	public Citas(Consultorios consultorio, Doctores doctor, LocalDateTime horario, String paciente) {
 		super();
 		this.consultorio = consultorio;
 		this.doctor = doctor;
@@ -44,7 +57,7 @@ public class Citas {
 		this.paciente = paciente;
 	}
 
-	public Citas(Long id, Consultorios consultorio, Doctores doctor, String horario, String paciente) {
+	public Citas(Long id, Consultorios consultorio, Doctores doctor, LocalDateTime horario, String paciente) {
 		super();
 		this.id = id;
 		this.consultorio = consultorio;
@@ -77,11 +90,11 @@ public class Citas {
 		this.doctor = doctor;
 	}
 
-	public String getHorario() {
+	public LocalDateTime getHorario() {
 		return horario;
 	}
 
-	public void setHorario(String horario) {
+	public void setHorario(LocalDateTime horario) {
 		this.horario = horario;
 	}
 
@@ -93,4 +106,9 @@ public class Citas {
 		this.paciente = paciente;
 	}
 
+	@Override
+	public String toString() {
+		return "Citas [id=" + id + ", consultorio=" + consultorio + ", doctor=" + doctor + ", horario=" + horario
+				+ ", paciente=" + paciente + "]";
+	}
 }

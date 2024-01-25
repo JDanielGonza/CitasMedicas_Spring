@@ -59,6 +59,13 @@ public class Consultorios {
 
 	public void setId(Long id) {
 		this.id = id;
-	}	
+	}
+
+	@Override
+	public String toString() {
+		return "Consultorios [id=" + id + ", numConsultorio=" + numConsultorio + ", piso=" + piso + "]";
+	}
+	
+	
 	
 }
